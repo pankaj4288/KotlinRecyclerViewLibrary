@@ -5,9 +5,9 @@ Developer has to use predefined class and pass list to a method and implement an
 An example for this can be found at [KotlinRecyclerViewExample](https://github.com/pankaj4288/KotlinRecyclerViewExample)
 
 ## Include in your gradle project
-'''
+```
 	compile 'com.pankaj.kotlin:KotlinRecyclerViewLibrary:1.0.0'
-'''
+```
 
 ## License
 Copyright 2018 Pankaj Kushwaha
