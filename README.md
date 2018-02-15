@@ -6,7 +6,8 @@ An example for this can be found at [KotlinRecyclerViewExample](https://github.c
 
 ## Include in your gradle project
 ```
-	compile 'com.pankaj.kotlin:KotlinRecyclerViewLibrary:1.0.0'
+compile 'com.pankaj.kotlin:KotlinRecyclerViewLibrary:1.0.0'
+implementation 'com.android.support:cardview-v7:26.1.0'
 ```
 
 ## License
