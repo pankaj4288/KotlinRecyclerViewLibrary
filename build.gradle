@@ -5,7 +5,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
 // This is the library version used when deploying the artifact
-version = "1.0.0"
+version = "1.0.1"
 
 android {
     compileSdkVersion 26
@@ -51,7 +51,7 @@ ext {
     siteUrl = 'https://github.com/pankaj4288/KotlinRecyclerViewLibrary'
     gitUrl = 'https://github.com/pankaj4288/KotlinRecyclerViewLibrary.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'pankaj4288'
     developerName = 'Pankaj Kushwaha'

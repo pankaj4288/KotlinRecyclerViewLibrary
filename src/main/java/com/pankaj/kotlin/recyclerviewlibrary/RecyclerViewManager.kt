@@ -16,6 +16,8 @@
 package com.pankaj.kotlin.recyclerviewlibrary
 
 import android.content.Context
+import android.os.Build
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.pankaj.kotlin.recyclerviewlibrary.adapter.RecyclerViewAdapter
@@ -23,15 +25,22 @@ import com.pankaj.kotlin.recyclerviewlibrary.interfaces.RecylerViewCallbackInter
 
 class RecyclerViewManager() {
 
-    var padding: IntArray = intArrayOf(5, 5, 5, 5)
-    var margin: IntArray = intArrayOf(5, 5, 5, 5)
-    var adap: RecyclerViewAdapter? = null
+    private var padding: IntArray = intArrayOf(5, 5, 5, 5)
+    private var margin: IntArray = intArrayOf(5, 5, 5, 5)
+    private var adap: RecyclerViewAdapter? = null
+
+    fun init(context: Context, callback: RecylerViewCallbackInterface,
+             lists:
+             ArrayList<String>) {
+        adap = RecyclerViewAdapter(context, callback, lists)
+    }
 
     fun setCardPadding(left: Int, top: Int, right: Int, botton: Int) {
         padding[0] = left
         padding[1] = top
         padding[2] = right
         padding[3] = botton
+        adap!!.setCardPadding(padding)
     }
 
     fun setCardMargin(left: Int, top: Int, right: Int, botton: Int) {
@@ -39,17 +48,43 @@ class RecyclerViewManager() {
         margin[1] = top
         margin[2] = right
         margin[3] = botton
+        adap!!.setCardMargin(margin)
     }
 
-    fun showListView(context: Context, callback: RecylerViewCallbackInterface, list: RecyclerView?, lists:
-    ArrayList<String>) {
-        list!!.layoutManager = LinearLayoutManager(context)
-        adap = RecyclerViewAdapter(context, callback, lists, margin, padding)
+    fun setTextColor(color: Int) {
+        adap!!.setTextColor(color!!)
+    }
+
+    fun setCardBackgroundColor(color: Int) {
+        adap!!.setBackgroundColor(color!!)
+    }
+
+    fun setCardCornerRadius(cornerRadius: Float) {
+        adap!!.setCardCornerRadius(cornerRadius)
+    }
+
+    fun setElevation(elevation: Float) {
+        adap!!.setElevation(elevation)
+    }
+
+    fun showListView(context: Context, list: RecyclerView?) {
+        list!!.layoutManager = LinearLayoutManager(context) as RecyclerView.LayoutManager?
         list.adapter = adap
+        adap!!.notifyDataSetChanged()
     }
 
-    fun notifyDataSetChanged(lists:
-                             ArrayList<String>) {
+    fun showListView(context: Context, list: RecyclerView?, columns: Int) {
+        list!!.layoutManager = GridLayoutManager(context, columns) as RecyclerView.LayoutManager?
+        list.adapter = adap
+        adap!!.notifyDataSetChanged()
+    }
+
+    fun notifyUpdates() {
+        adap!!.notifyDataSetChanged()
+    }
+
+    fun updateList(lists:
+                   ArrayList<String>) {
         adap!!.updatedList(lists)
     }
 }
