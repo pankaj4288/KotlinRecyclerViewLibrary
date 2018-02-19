@@ -4,9 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
-// This is the library version used when deploying the artifact
-version = "1.0.1"
-
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -51,7 +48,7 @@ ext {
     siteUrl = 'https://github.com/pankaj4288/KotlinRecyclerViewLibrary'
     gitUrl = 'https://github.com/pankaj4288/KotlinRecyclerViewLibrary.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.4'
 
     developerId = 'pankaj4288'
     developerName = 'Pankaj Kushwaha'
@@ -96,6 +93,20 @@ install {
                     developerConnection gitUrl
                     url siteUrl
 
+                }
+                dependencies {
+                    dependency {
+                        groupId 'com.android.support'
+                        artifactId 'recyclerview-v7'
+                        version '26.1.0'
+                        scope 'implementation'
+                    }
+                    dependency {
+                        groupId 'com.android.support'
+                        artifactId 'cardview-v7'
+                        version '26.1.0'
+                        scope 'implementation'
+                    }
                 }
             }
         }

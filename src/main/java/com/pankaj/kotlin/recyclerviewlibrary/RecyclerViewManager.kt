@@ -16,7 +16,6 @@
 package com.pankaj.kotlin.recyclerviewlibrary
 
 import android.content.Context
-import android.os.Build
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -33,6 +32,8 @@ class RecyclerViewManager() {
              lists:
              ArrayList<String>) {
         adap = RecyclerViewAdapter(context, callback, lists)
+        setTextColor(R.color.primary_material_dark);
+        setCardBackgroundColor(R.color.cardview_light_background)
     }
 
     fun setCardPadding(left: Int, top: Int, right: Int, botton: Int) {

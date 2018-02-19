@@ -18,8 +18,6 @@ package com.pankaj.kotlin.recyclerviewlibrary.adapter
 
 import android.content.Context
 import android.support.v4.content.ContextCompat
-import android.support.v7.widget.AppCompatButton
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -32,8 +30,8 @@ class RecyclerViewAdapter(var context: Context, var callback: RecylerViewCallbac
 ArrayList<String>) : RecyclerView
 .Adapter<RecyclerViewAdapter.ViewHolder>() {
 
-    var cardBackgroundColor: Int = R.color.cardview_light_background
-    var cardTextColor: Int = R.color.primary_material_dark
+    var cardBackgroundColor: Int? = null
+    var cardTextColor: Int? = null
     var cornerRadius: Float = 0.0f
     var cardElevation: Float = 0.0f
     var margin: IntArray? = null
@@ -52,8 +50,8 @@ ArrayList<String>) : RecyclerView
         holder!!.title.text = lists[position]
         holder!!.cardView.setOnClickListener { callback.itemClicked(position) }
         holder!!.cardView.setContentPadding(padding!![0], padding!![1], padding!![2], padding!![3])
-        holder!!.cardView.setCardBackgroundColor(ContextCompat.getColor(context,cardBackgroundColor!!))
-        holder!!.title.setTextColor(ContextCompat.getColor(context,cardTextColor!!))
+        holder!!.cardView.setCardBackgroundColor(ContextCompat.getColor(context, cardBackgroundColor!!))
+        holder!!.title.setTextColor(ContextCompat.getColor(context, cardTextColor!!))
         holder!!.cardView.radius = cornerRadius
         holder!!.cardView.elevation = cardElevation
         val layoutParams = holder!!.itemView.card_view.getLayoutParams() as ViewGroup.MarginLayoutParams
@@ -71,16 +69,10 @@ ArrayList<String>) : RecyclerView
     }
 
     fun setBackgroundColor(color: Int) {
-        if (color == null) {
-            cardBackgroundColor = R.color.cardview_light_background
-        }
         cardBackgroundColor = color
     }
 
     fun setTextColor(color: Int) {
-        if (color == null) {
-            cardTextColor = R.color.primary_material_dark
-        }
         cardTextColor = color
     }
 
@@ -100,5 +92,3 @@ ArrayList<String>) : RecyclerView
         this.cardElevation = elevation
     }
 }
-
-
