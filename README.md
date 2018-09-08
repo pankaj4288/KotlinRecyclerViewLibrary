@@ -4,6 +4,9 @@ Developer has to use predefined class and pass list to a method and implement an
 
 An example for this can be found at [KotlinRecyclerViewExample](https://github.com/pankaj4288/KotlinRecyclerViewExample)
 
+<a href="https://gph.is/2wSTylT"><img src="https://media.giphy.com/media/7vAhtu1FtTJR1Yo8VR/giphy.gif" width='275' height='428' /></a>
+<a href="https://gph.is/2oQIzEN"><img src="https://media.giphy.com/media/MUlsTKzqhNWKQ7XdOI/giphy.gif" width='275' height='428' /></a>
+
 ## Include in your gradle project
 ```
 compile 'com.pankaj.kotlin:KotlinRecyclerViewLibrary:1.0.0'
