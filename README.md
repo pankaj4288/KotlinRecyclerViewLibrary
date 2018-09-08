@@ -1,8 +1,9 @@
-# KotlinRecyclerViewLibrary
-This library enables developers to create a simple recycler view without creating an adapter or layout for adapter.
-Developer has to use predefined class and pass list to a method and implement an interface to recieve onClick events
+# KotlinListAdapterExample
+This project is an example RecyclerView on Kotlin
+Library code can be found at [KotlinRecyclerLibrary](https://github.com/pankaj4288/KotlinRecyclerViewLibrary)
 
-An example for this can be found at [KotlinRecyclerViewExample](https://github.com/pankaj4288/KotlinRecyclerViewExample)
+<a href="https://gph.is/2wSTylT"><img src="https://media.giphy.com/media/7vAhtu1FtTJR1Yo8VR/giphy.gif" width='275' height='428' /></a>
+<a href="https://gph.is/2oQIzEN"><img src="https://media.giphy.com/media/MUlsTKzqhNWKQ7XdOI/giphy.gif" width='275' height='428' /></a>
 
 ## Include in your gradle project
 ```
